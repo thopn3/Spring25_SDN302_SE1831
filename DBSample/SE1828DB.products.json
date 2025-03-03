@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "67bea289e70fa2fad2490732"
+  },
+  "name": "Smartphone",
+  "price": 99,
+  "stock": 50,
+  "category": {
+    "$oid": "67bea1d12fa8154c7955f609"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c511bc226efa7389c3b3e0"
+  },
+  "name": "test",
+  "price": 10.5,
+  "stock": 100,
+  "category": "67bea1d12fa8154c7955f60a"
+}]

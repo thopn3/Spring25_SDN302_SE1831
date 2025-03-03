@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "67bea1d12fa8154c7955f609"
+  },
+  "name": "Electronics",
+  "description": "Devices and gadgets including mobile phones, laptops, and accessories."
+},
+{
+  "_id": {
+    "$oid": "67bea1d12fa8154c7955f60a"
+  },
+  "name": "Clothing",
+  "description": "Men's and women's fashion including shirts, jeans, and accessories."
+},
+{
+  "_id": {
+    "$oid": "67bea1d12fa8154c7955f60b"
+  },
+  "name": "Home & Kitchen",
+  "description": "Furniture, appliances, and kitchen essentials for modern living."
+}]
