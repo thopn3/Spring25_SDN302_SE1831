@@ -28,3 +28,48 @@ exports.addNewProduct = async (req, res) => {
         });
     }
 };
+
+exports.deleteProduct = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const product = await Product.findById(id);
+
+        if(!product)
+            res.status(404).json({message: 'Product not found!'});
+        // Delete action
+        const delDoc = await Product.findByIdAndDelete(id).exec();
+        res.status(200).json({
+            message: "Delete successfully!",
+            deletedData: delDoc
+        });
+    } catch (error) {
+       next(error);
+    }
+}
+
+exports.updateProduct = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const {name, price, stock, categoryId} = req.body;
+        const product = await Product.findById(id);
+
+        if(!product)
+            res.status(404).json({message: 'Product not found!'});
+        
+        // Update values -> Properties of product
+        product.name = name;
+        product.price = price;
+        product.stock = stock;
+        product.categoryId = categoryId;
+
+        const updatedDoc = await product.save();
+
+        res.status(200).json({
+            message: "Update successfully!",
+            updatedData: updatedDoc
+        });
+    } catch (error) {
+       next(error);
+    }
+}
+

@@ -20,6 +20,13 @@ app.get("/", (req, res) => {
 
 app.use('/api/products', require('./routes/productRoute'));
 
+// Middleware đọc lỗi từ các actions của controller
+app.use((err, req, res, next) => {
+    if(err){
+        res.status(err.StatusCode||500).json(err);
+    }
+});
+
 // Connect to DB
 connectionDB();
 const PORT = process.env.PORT || 9999;
